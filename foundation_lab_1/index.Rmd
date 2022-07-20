@@ -54,6 +54,7 @@ xaringanExtra::use_tile_view()
 
 ```
 
+
 # `r rmarkdown::metadata$title`
 ----
 ### `r rmarkdown::metadata$author`
