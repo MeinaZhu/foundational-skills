@@ -71,7 +71,7 @@ LEARNING ANALYTICS WORKFLOW
 - Wrangle
 - Explore
 - Model
-_ Communication
+- Communication
 
 
 
