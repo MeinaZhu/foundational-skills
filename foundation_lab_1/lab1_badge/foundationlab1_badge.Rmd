@@ -26,33 +26,33 @@ Use the institutional library (e.g. [NCSU Library](https://www.lib.ncsu.edu/#art
 
 1.  Provide an APA citation for your selected study.
 
-    -   
+    -   Sense, F., van der Velde, M., & van Rijn, H. (2021). Predicting university students' exam performance using a model-based adaptive fact-learning system. *Journal of Learning Analytics*, *8*(3), 155-169
 
 2.  What types of data are associated with LA ?
 
-    -   
+    -   assessment
 
 3.  What type of data structures are analyzed in the educational context?
 
-    -   
+    -   Digital learning environments
 
 4.  How might this article be used to better understand a dataset or educational context of personal or professional interest to you?
 
-    -   
+    -   It predicts university students' exam performance using a model-based adaptive fact-learning system
 
 5.  Finally, how do these processes compare with what teachers and educational organizations already do to support and assess student learning?
 
-    -   
+    -   This helps make earlier interventions to help student learning
 
 Draft a research question of guided by techniques and data sources that you are potentially interested in exploring in more depth.
 
 1.  What data source(s) should be analyzed or discussed?
 
-    -   
+    -   LMS learning behaviors
 
 2.  What is the purpose of your article?
 
-    -   
+    -   how learning behaviors predict their success
 
 3.  Explain the analytical level at which these data would need to be collected and analyzed.
 
@@ -60,7 +60,7 @@ Draft a research question of guided by techniques and data sources that you are 
 
 4.  How, if at all, will your article touch upon the application(s) of LA to "understand and improve learning and the contexts in which learning occurs?"
 
-    -   
+    -   Yes
 
 ### Part II: Data Product
 
@@ -69,6 +69,10 @@ After you finish the script file for [lab1_badge](https://github.com/laser-insti
 ```{r, problem_1}
 # YOUR FINAL CODE HERE
 
+df <- data.frame( Students =  c("Thor", "Rogue", "Electra", "Electra", "Wolverine"),
+                  Foods = c("Bread", "Orange", "Chocolate", "Carrots", "Milk")
+                 )
+print (df)
 
 ```
 
@@ -76,11 +80,14 @@ After you finish the script file for [lab1_badge](https://github.com/laser-insti
 # YOUR FINAL CODE HERE
 
 
+table(df$Students)
 ```
 
 ```{r, problem_3}
 # YOUR FINAL CODE HERE
-
+mynum = c(3,4,5,7,9)
+mysum = sum(mynum)
+print (mysum)
 
 ```
 
@@ -88,11 +95,18 @@ After you finish the script file for [lab1_badge](https://github.com/laser-insti
 # YOUR FINAL CODE HERE
 
 
+library (tidyverse)
+#getwd()
+
+setwd("/Users/meinazhu/Documents/GitHub/foundational-skills/foundation_lab_1")
+sci_classess <- read_csv("./data/sci-online-classes.csv")
 ```
 
 ```{r, problem_5}
 # YOUR FINAL CODE HERE
-#test
+
+newdf <-  select(sci_classess, -c("subject", "section"))
+print(newdf)
 
 ```
 

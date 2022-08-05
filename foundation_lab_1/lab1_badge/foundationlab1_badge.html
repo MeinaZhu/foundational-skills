@@ -396,27 +396,31 @@ welcome to select one of your research papers.</p>
 <ol style="list-style-type: decimal">
 <li><p>Provide an APA citation for your selected study.</p>
 <ul>
-<li></li>
+<li>Sense, F., van der Velde, M., &amp; van Rijn, H. (2021). Predicting
+university students’ exam performance using a model-based adaptive
+fact-learning system. <em>Journal of Learning Analytics</em>,
+<em>8</em>(3), 155-169</li>
 </ul></li>
 <li><p>What types of data are associated with LA ?</p>
 <ul>
-<li></li>
+<li>assessment</li>
 </ul></li>
 <li><p>What type of data structures are analyzed in the educational
 context?</p>
 <ul>
-<li></li>
+<li>Digital learning environments</li>
 </ul></li>
 <li><p>How might this article be used to better understand a dataset or
 educational context of personal or professional interest to you?</p>
 <ul>
-<li></li>
+<li>It predicts university students’ exam performance using a
+model-based adaptive fact-learning system</li>
 </ul></li>
 <li><p>Finally, how do these processes compare with what teachers and
 educational organizations already do to support and assess student
 learning?</p>
 <ul>
-<li></li>
+<li>This helps make earlier interventions to help student learning</li>
 </ul></li>
 </ol>
 <p>Draft a research question of guided by techniques and data sources
@@ -424,11 +428,11 @@ that you are potentially interested in exploring in more depth.</p>
 <ol style="list-style-type: decimal">
 <li><p>What data source(s) should be analyzed or discussed?</p>
 <ul>
-<li></li>
+<li>LMS learning behaviors</li>
 </ul></li>
 <li><p>What is the purpose of your article?</p>
 <ul>
-<li></li>
+<li>how learning behaviors predict their success</li>
 </ul></li>
 <li><p>Explain the analytical level at which these data would need to be
 collected and analyzed.</p>
@@ -439,7 +443,7 @@ collected and analyzed.</p>
 of LA to “understand and improve learning and the contexts in which
 learning occurs?”</p>
 <ul>
-<li></li>
+<li>Yes</li>
 </ul></li>
 </ol>
 </div>
@@ -448,12 +452,78 @@ learning occurs?”</p>
 <p>After you finish the script file for <a href="https://github.com/laser-institute/foundational-skills/tree/master/foundation_lab_1/lab1_badge">lab1_badge</a>
 add the code fo reach problem into the correct code chunks below. #
 Making sure not to change the code chunk name.</p>
-<pre class="r"><code># YOUR FINAL CODE HERE</code></pre>
-<pre class="r"><code># YOUR FINAL CODE HERE</code></pre>
-<pre class="r"><code># YOUR FINAL CODE HERE</code></pre>
-<pre class="r"><code># YOUR FINAL CODE HERE</code></pre>
 <pre class="r"><code># YOUR FINAL CODE HERE
-#test</code></pre>
+
+df &lt;- data.frame( Students =  c(&quot;Thor&quot;, &quot;Rogue&quot;, &quot;Electra&quot;, &quot;Electra&quot;, &quot;Wolverine&quot;),
+                  Foods = c(&quot;Bread&quot;, &quot;Orange&quot;, &quot;Chocolate&quot;, &quot;Carrots&quot;, &quot;Milk&quot;)
+                 )
+print (df)</code></pre>
+<pre><code>##    Students     Foods
+## 1      Thor     Bread
+## 2     Rogue    Orange
+## 3   Electra Chocolate
+## 4   Electra   Carrots
+## 5 Wolverine      Milk</code></pre>
+<pre class="r"><code># YOUR FINAL CODE HERE
+
+
+table(df$Students)</code></pre>
+<pre><code>## 
+##   Electra     Rogue      Thor Wolverine 
+##         2         1         1         1</code></pre>
+<pre class="r"><code># YOUR FINAL CODE HERE
+mynum = c(3,4,5,7,9)
+mysum = sum(mynum)
+print (mysum)</code></pre>
+<pre><code>## [1] 28</code></pre>
+<pre class="r"><code># YOUR FINAL CODE HERE
+
+
+library (tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 3.3.5     ✔ purrr   0.3.4
+## ✔ tibble  3.1.7     ✔ dplyr   1.0.9
+## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
+## ✔ readr   2.1.2     ✔ forcats 0.5.1</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>#getwd()
+
+setwd(&quot;/Users/meinazhu/Documents/GitHub/foundational-skills/foundation_lab_1&quot;)
+sci_classess &lt;- read_csv(&quot;./data/sci-online-classes.csv&quot;)</code></pre>
+<pre><code>## Rows: 603 Columns: 30</code></pre>
+<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (6): course_id, subject, semester, section, Gradebook_Item, Gender
+## dbl (23): student_id, total_points_possible, total_points_earned, percentage...
+## lgl  (1): Grade_Category
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code># YOUR FINAL CODE HERE
+
+newdf &lt;-  select(sci_classess, -c(&quot;subject&quot;, &quot;section&quot;))
+print(newdf)</code></pre>
+<pre><code>## # A tibble: 603 × 28
+##    student_id course_id     total_points_poss… total_points_ea… percentage_earn…
+##         &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+##  1      43146 FrScA-S216-02               3280             2220            0.677
+##  2      44638 OcnA-S116-01                3531             2672            0.757
+##  3      47448 FrScA-S216-01               2870             1897            0.661
+##  4      47979 OcnA-S216-01                4562             3090            0.677
+##  5      48797 PhysA-S116-01               2207             1910            0.865
+##  6      51943 FrScA-S216-03               4208             3596            0.855
+##  7      52326 AnPhA-S216-01               4325             2255            0.521
+##  8      52446 PhysA-S116-01               2086             1719            0.824
+##  9      53447 FrScA-S116-01               4655             3149            0.676
+## 10      53475 FrScA-S116-02               1710             1402            0.820
+## # … with 593 more rows, and 23 more variables: semester &lt;chr&gt;,
+## #   Gradebook_Item &lt;chr&gt;, Grade_Category &lt;lgl&gt;, FinalGradeCEMS &lt;dbl&gt;,
+## #   Points_Possible &lt;dbl&gt;, Points_Earned &lt;dbl&gt;, Gender &lt;chr&gt;, q1 &lt;dbl&gt;,
+## #   q2 &lt;dbl&gt;, q3 &lt;dbl&gt;, q4 &lt;dbl&gt;, q5 &lt;dbl&gt;, q6 &lt;dbl&gt;, q7 &lt;dbl&gt;, q8 &lt;dbl&gt;,
+## #   q9 &lt;dbl&gt;, q10 &lt;dbl&gt;, TimeSpent &lt;dbl&gt;, TimeSpent_hours &lt;dbl&gt;,
+## #   TimeSpent_std &lt;dbl&gt;, int &lt;dbl&gt;, pc &lt;dbl&gt;, uv &lt;dbl&gt;</code></pre>
 </div>
 <div id="knit-submit" class="section level3">
 <h3>Knit &amp; Submit</h3>
