@@ -63,7 +63,7 @@ Bullet points can be used with a `single dash` or a `plus sign`
 > Outcomes:
 
 -   Learn R Markdown.
-    +   Learn about Yaml heading.
+    -   Learn about Yaml heading.
     -   Learn R Markdown Syntax.
 -   Learn how to read in data.
 -   Learn to wrangle data.
@@ -74,7 +74,7 @@ Bullet points can be used with a `single dash` or a `plus sign`
 
 2.  Add a code chunk by holding down `Ctrl` + `Alt` + `I`
 
-## 2. WorkFlow Recap
+## ![]()2. WorkFlow Recap
 
 ### 3.1 Workflow
 
@@ -122,8 +122,9 @@ Let's use the `read_csv()` function from {readr} to import our
 this analysis:
 
 ```{r}
+getwd()
 #load with read_csv package
-time_spent <- read_csv("~/RProj22/foundation_labs_2022/foundation_lab_2/data/log-data.csv")
+time_spent <- read_csv("data/log-data.csv")
 ```
 
 Now let's load it with the {here} package.
@@ -153,11 +154,12 @@ glimpse(gradebook)
 
 The third data source is a self-report survey. This was data collected
 before the start of the course. The survey included ten items, each
-corresponding to one of three motivation measures: interest, utility value, and perceived competence. These were chosen for their alignment
+corresponding to one of three motivation measures: interest, utility
+value, and perceived competence. These were chosen for their alignment
 with one way to think about students' motivation, to what extent they
 expect to do well (corresponding to their perceived competence) and
 their value for what they are learning (corresponding to their interest
-and utility value). 
+and utility value).
 
 ```{r}
 #load data 3:Self-Report Survey
@@ -255,7 +257,6 @@ data_to_explore \<- full_join(joined_data, survey, by = c("student_id",
 
 
 ```
-
 
 ```{r}
 #mutate to change variable class from double or numeric to character

@@ -9,8 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
+<meta name="author" content="Meina Zhu" />
 
-<meta name="date" content="2022-07-10" />
+<meta name="date" content="2022-08-09" />
 
 <title>LA Workflow - Badge</title>
 
@@ -364,8 +365,8 @@ pre code {
 
 <h1 class="title toc-ignore">LA Workflow - Badge</h1>
 <h3 class="subtitle">LASER Institute Foundation Learning Lab 2</h3>
-<h4 class="author"></h4>
-<h4 class="date">2022-07-10</h4>
+<h4 class="author">Meina Zhu</h4>
+<h4 class="date">2022-08-09</h4>
 
 </div>
 
@@ -395,27 +396,32 @@ welcome to select one of your research papers.</p>
 <ol style="list-style-type: decimal">
 <li><p>Provide an APA citation for your selected study.</p>
 <ul>
-<li></li>
+<li>Nawaz, S., Kennedy, G., Bailey, J., &amp; Mead, C. (2020). Moments
+of Confusion in Simulation-Based Learning Environments. <em>Journal of
+Learning Analytics</em>, <em>7</em>(3), 118-137.</li>
 </ul></li>
 <li><p>What educational issue, “problem of practice,” and/or questions
 were addressed?</p>
 <ul>
-<li></li>
+<li>Students’ confusion in simulation-based learning environments</li>
 </ul></li>
 <li><p>Briefly describe any steps of the data-intensive research
 workflow that detailed in your article or presentation.</p>
 <ul>
-<li></li>
+<li>Prepare-explore-model-communicate</li>
 </ul></li>
 <li><p>What were the key findings or conclusions? What value, if any,
 might education practitioners find in these results?</p>
 <ul>
-<li></li>
+<li>confidence in prior knowledge is an important factor that can
+contribute to students&#39; confusion. Students mostly struggled when they
+discovered a mismatch between the subjective and objective correctness
+of their responses.</li>
 </ul></li>
 <li><p>Finally, how, if at at, were educators in your self-selected
 article involved prior to wrangling and analysis?</p>
 <ul>
-<li></li>
+<li>No specific info</li>
 </ul></li>
 </ol>
 <p>Draft a new research question of guided by the the phases of the
@@ -425,15 +431,19 @@ questions.</p>
 <li><p>What educational issue, “problem of practice,” and/or questions
 is addressed??</p>
 <ul>
-<li></li>
+<li>What strategies improve learners’ SDL skills in online
+learning?</li>
 </ul></li>
 <li><p>Briefly describe any steps of the data-intensive research
-workflow that can be detailed in your article or presentation.</p></li>
+workflow that can be detailed in your article or presentation.</p>
+<ul>
+<li>Prepare-wrangel-explore-model-communicate</li>
+</ul></li>
 <li><p>How, if at all, will your article touch upon the application(s)
 of LA to “understand and improve learning and the contexts in which
 learning occurs?”</p>
 <ul>
-<li></li>
+<li>Yes.</li>
 </ul></li>
 </ol>
 </div>
@@ -474,23 +484,66 @@ data.</p></li>
 <li>In the chunk called <code>read-data</code>: <em>Import</em> the
 <code>sci-online-classes.csv</code> from the <code>data</code> folder
 and <em>save</em> as a new <code>object</code> called
-<code>sci-classes</code>. Then <em>inspect</em> your data using a
+<code>sci_classes</code>. Then <em>inspect</em> your data using a
 <code>function</code> of your choice.</li>
 </ol>
-<pre class="r"><code># Type your code here</code></pre>
+<pre class="r"><code># Type your code here
+
+library(tidyverse)</code></pre>
+<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
+<pre><code>## ✔ ggplot2 3.3.5     ✔ purrr   0.3.4
+## ✔ tibble  3.1.7     ✔ dplyr   1.0.9
+## ✔ tidyr   1.2.0     ✔ stringr 1.4.0
+## ✔ readr   2.1.2     ✔ forcats 0.5.1</code></pre>
+<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+## ✖ dplyr::filter() masks stats::filter()
+## ✖ dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>sci_classess &lt;- read_csv(&quot;data/sci-online-classes.csv&quot;)</code></pre>
+<pre><code>## Rows: 603 Columns: 30</code></pre>
+<pre><code>## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: &quot;,&quot;
+## chr  (6): course_id, subject, semester, section, Gradebook_Item, Gender
+## dbl (23): student_id, total_points_possible, total_points_earned, percentage...
+## lgl  (1): Grade_Category
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+<pre class="r"><code>sci_classess</code></pre>
+<pre><code>## # A tibble: 603 × 30
+##    student_id course_id     total_points_poss… total_points_ea… percentage_earn…
+##         &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+##  1      43146 FrScA-S216-02               3280             2220            0.677
+##  2      44638 OcnA-S116-01                3531             2672            0.757
+##  3      47448 FrScA-S216-01               2870             1897            0.661
+##  4      47979 OcnA-S216-01                4562             3090            0.677
+##  5      48797 PhysA-S116-01               2207             1910            0.865
+##  6      51943 FrScA-S216-03               4208             3596            0.855
+##  7      52326 AnPhA-S216-01               4325             2255            0.521
+##  8      52446 PhysA-S116-01               2086             1719            0.824
+##  9      53447 FrScA-S116-01               4655             3149            0.676
+## 10      53475 FrScA-S116-02               1710             1402            0.820
+## # … with 593 more rows, and 25 more variables: subject &lt;chr&gt;, semester &lt;chr&gt;,
+## #   section &lt;chr&gt;, Gradebook_Item &lt;chr&gt;, Grade_Category &lt;lgl&gt;,
+## #   FinalGradeCEMS &lt;dbl&gt;, Points_Possible &lt;dbl&gt;, Points_Earned &lt;dbl&gt;,
+## #   Gender &lt;chr&gt;, q1 &lt;dbl&gt;, q2 &lt;dbl&gt;, q3 &lt;dbl&gt;, q4 &lt;dbl&gt;, q5 &lt;dbl&gt;, q6 &lt;dbl&gt;,
+## #   q7 &lt;dbl&gt;, q8 &lt;dbl&gt;, q9 &lt;dbl&gt;, q10 &lt;dbl&gt;, TimeSpent &lt;dbl&gt;,
+## #   TimeSpent_hours &lt;dbl&gt;, TimeSpent_std &lt;dbl&gt;, int &lt;dbl&gt;, pc &lt;dbl&gt;, uv &lt;dbl&gt;</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>In the select-1 code chunk: Use the ‘select’ function to
 <em>select</em> <code>student_id</code>, <code>subject</code>,
 <code>semester</code>, <code>FinalGradeCEMS</code>. <em>Assign</em> to a
 new object with a different name (you choose the name).</li>
 </ol>
-<pre class="r"><code># Type your code here</code></pre>
+<pre class="r"><code># Type your code here
+
+new_sci_classess &lt;- sci_classess %&gt;% 
+  select(&quot;student_id&quot;,&quot;subject&quot;,&quot;semester&quot;,&quot;FinalGradeCEMS&quot;)</code></pre>
 <ul>
 <li></li>
 </ul>
 <p>What do you notice about FinalGradeCEMS?(*Hint: NAs?)</p>
 <ul>
-<li>Answer here</li>
+<li>Answer here is.na(sci_classess$FinalGradeCEMS)</li>
 </ul>
 <ol start="5" style="list-style-type: decimal">
 <li>In code chunk named <code>select-2</code> <em>select</em> all
@@ -498,34 +551,131 @@ columns except <code>subject</code> and <code>section</code>.
 <em>Assign</em> to a new object with a different name. <em>Examine</em>
 your data frame with a different <code>function</code>.</li>
 </ol>
-<pre class="r"><code># Type your code here</code></pre>
+<pre class="r"><code># Type your code here
+
+new2_sci_classess &lt;- sci_classess %&gt;% 
+  select(-c(&quot;subject&quot;,&quot;section&quot;))
+
+glimpse(new2_sci_classess)</code></pre>
+<pre><code>## Rows: 603
+## Columns: 28
+## $ student_id            &lt;dbl&gt; 43146, 44638, 47448, 47979, 48797, 51943, 52326,…
+## $ course_id             &lt;chr&gt; &quot;FrScA-S216-02&quot;, &quot;OcnA-S116-01&quot;, &quot;FrScA-S216-01&quot;…
+## $ total_points_possible &lt;dbl&gt; 3280, 3531, 2870, 4562, 2207, 4208, 4325, 2086, …
+## $ total_points_earned   &lt;dbl&gt; 2220, 2672, 1897, 3090, 1910, 3596, 2255, 1719, …
+## $ percentage_earned     &lt;dbl&gt; 0.6768293, 0.7567261, 0.6609756, 0.6773345, 0.86…
+## $ semester              &lt;chr&gt; &quot;S216&quot;, &quot;S116&quot;, &quot;S216&quot;, &quot;S216&quot;, &quot;S116&quot;, &quot;S216&quot;, …
+## $ Gradebook_Item        &lt;chr&gt; &quot;POINTS EARNED &amp; TOTAL COURSE POINTS&quot;, &quot;ATTEMPTE…
+## $ Grade_Category        &lt;lgl&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, …
+## $ FinalGradeCEMS        &lt;dbl&gt; 93.45372, 81.70184, 88.48758, 81.85260, 84.00000…
+## $ Points_Possible       &lt;dbl&gt; 5, 10, 10, 5, 438, 5, 10, 10, 443, 5, 12, 10, 5,…
+## $ Points_Earned         &lt;dbl&gt; NA, 10.00, NA, 4.00, 399.00, NA, NA, 10.00, 425.…
+## $ Gender                &lt;chr&gt; &quot;M&quot;, &quot;F&quot;, &quot;M&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;, &quot;M&quot;, &quot;F&quot;, &quot;F&quot;, &quot;M&quot;…
+## $ q1                    &lt;dbl&gt; 5, 4, 5, 5, 4, NA, 5, 3, 4, NA, NA, 4, 3, 5, NA,…
+## $ q2                    &lt;dbl&gt; 4, 4, 4, 5, 3, NA, 5, 3, 3, NA, NA, 5, 3, 3, NA,…
+## $ q3                    &lt;dbl&gt; 4, 3, 4, 3, 3, NA, 3, 3, 3, NA, NA, 3, 3, 5, NA,…
+## $ q4                    &lt;dbl&gt; 5, 4, 5, 5, 4, NA, 5, 3, 4, NA, NA, 5, 3, 5, NA,…
+## $ q5                    &lt;dbl&gt; 5, 4, 5, 5, 4, NA, 5, 3, 4, NA, NA, 5, 4, 5, NA,…
+## $ q6                    &lt;dbl&gt; 5, 4, 4, 5, 4, NA, 5, 4, 3, NA, NA, 5, 3, 5, NA,…
+## $ q7                    &lt;dbl&gt; 5, 4, 4, 4, 4, NA, 4, 3, 3, NA, NA, 5, 3, 5, NA,…
+## $ q8                    &lt;dbl&gt; 5, 5, 5, 5, 4, NA, 5, 3, 4, NA, NA, 4, 3, 5, NA,…
+## $ q9                    &lt;dbl&gt; 4, 4, 3, 5, NA, NA, 5, 3, 2, NA, NA, 5, 2, 2, NA…
+## $ q10                   &lt;dbl&gt; 5, 4, 5, 5, 3, NA, 5, 3, 5, NA, NA, 4, 4, 5, NA,…
+## $ TimeSpent             &lt;dbl&gt; 1555.1667, 1382.7001, 860.4335, 1598.6166, 1481.…
+## $ TimeSpent_hours       &lt;dbl&gt; 25.91944500, 23.04500167, 14.34055833, 26.643610…
+## $ TimeSpent_std         &lt;dbl&gt; -0.18051496, -0.30780313, -0.69325954, -0.148446…
+## $ int                   &lt;dbl&gt; 5.0, 4.2, 5.0, 5.0, 3.8, 4.6, 5.0, 3.0, 4.2, NA,…
+## $ pc                    &lt;dbl&gt; 4.50, 3.50, 4.00, 3.50, 3.50, 4.00, 3.50, 3.00, …
+## $ uv                    &lt;dbl&gt; 4.333333, 4.000000, 3.666667, 5.000000, 3.500000…</code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li>In the code chunk named <code>filter-1</code>, <em>Filter</em> the
-sci_classes data frame for students in OcnA courses. <em>Assign</em> to
-a new object with a different name. <em>Use</em> the head() function to
-examine your data frame.</li>
+<strong>sci_classes data</strong> frame for students in OcnA courses.
+<em>Assign</em> to a new object with a different name. <em>Use</em> the
+head() function to examine your data frame.</li>
 </ol>
-<pre class="r"><code>#Type your code here</code></pre>
+<pre class="r"><code>#Type your code here
+
+filter_1 &lt;- sci_classess %&gt;%
+  filter ( subject == &quot;OcnA&quot;)
+
+head(filter_1)</code></pre>
+<pre><code>## # A tibble: 6 × 30
+##   student_id course_id    total_points_possib… total_points_ea… percentage_earn…
+##        &lt;dbl&gt; &lt;chr&gt;                       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1      44638 OcnA-S116-01                 3531             2672            0.757
+## 2      47979 OcnA-S216-01                 4562             3090            0.677
+## 3      54066 OcnA-S116-01                 4641             3429            0.739
+## 4      54282 OcnA-S116-02                 3581             2777            0.775
+## 5      54342 OcnA-S116-02                 3256             2876            0.883
+## 6      54346 OcnA-S116-01                 4471             3773            0.844
+## # … with 25 more variables: subject &lt;chr&gt;, semester &lt;chr&gt;, section &lt;chr&gt;,
+## #   Gradebook_Item &lt;chr&gt;, Grade_Category &lt;lgl&gt;, FinalGradeCEMS &lt;dbl&gt;,
+## #   Points_Possible &lt;dbl&gt;, Points_Earned &lt;dbl&gt;, Gender &lt;chr&gt;, q1 &lt;dbl&gt;,
+## #   q2 &lt;dbl&gt;, q3 &lt;dbl&gt;, q4 &lt;dbl&gt;, q5 &lt;dbl&gt;, q6 &lt;dbl&gt;, q7 &lt;dbl&gt;, q8 &lt;dbl&gt;,
+## #   q9 &lt;dbl&gt;, q10 &lt;dbl&gt;, TimeSpent &lt;dbl&gt;, TimeSpent_hours &lt;dbl&gt;,
+## #   TimeSpent_std &lt;dbl&gt;, int &lt;dbl&gt;, pc &lt;dbl&gt;, uv &lt;dbl&gt;</code></pre>
 <p>Q: How many rows does the head() function display? <em>Hint: Check
 the dimensions of your tibble in the console.</em></p>
 <ul>
-<li>Answer here</li>
+<li>Answer here: 6</li>
 </ul>
 <ol start="7" style="list-style-type: decimal">
 <li>In code chunk named <code>filter-2</code>, <em>filter</em> the
-sci_classes data frame so rows with NA for points earned are removed.
-<em>Assign</em> to a new object with a different name. <em>Use</em>
-glimpse() to examine all columns of your data frame.</li>
+<strong>sci_classes data</strong> frame so rows with NA for points
+earned are removed. <em>Assign</em> to a new object with a different
+name. <em>Use</em> glimpse() to examine all columns of your data
+frame.</li>
 </ol>
-<pre class="r"><code># Type your code here</code></pre>
+<pre class="r"><code># Type your code here
+filter_2 &lt;- sci_classess %&gt;%  
+  drop_na(Points_Earned)
+
+head(filter_2)</code></pre>
+<pre><code>## # A tibble: 6 × 30
+##   student_id course_id     total_points_possi… total_points_ea… percentage_earn…
+##        &lt;dbl&gt; &lt;chr&gt;                       &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+## 1      44638 OcnA-S116-01                 3531             2672            0.757
+## 2      47979 OcnA-S216-01                 4562             3090            0.677
+## 3      48797 PhysA-S116-01                2207             1910            0.865
+## 4      52446 PhysA-S116-01                2086             1719            0.824
+## 5      53447 FrScA-S116-01                4655             3149            0.676
+## 6      53475 FrScA-S116-02                1710             1402            0.820
+## # … with 25 more variables: subject &lt;chr&gt;, semester &lt;chr&gt;, section &lt;chr&gt;,
+## #   Gradebook_Item &lt;chr&gt;, Grade_Category &lt;lgl&gt;, FinalGradeCEMS &lt;dbl&gt;,
+## #   Points_Possible &lt;dbl&gt;, Points_Earned &lt;dbl&gt;, Gender &lt;chr&gt;, q1 &lt;dbl&gt;,
+## #   q2 &lt;dbl&gt;, q3 &lt;dbl&gt;, q4 &lt;dbl&gt;, q5 &lt;dbl&gt;, q6 &lt;dbl&gt;, q7 &lt;dbl&gt;, q8 &lt;dbl&gt;,
+## #   q9 &lt;dbl&gt;, q10 &lt;dbl&gt;, TimeSpent &lt;dbl&gt;, TimeSpent_hours &lt;dbl&gt;,
+## #   TimeSpent_std &lt;dbl&gt;, int &lt;dbl&gt;, pc &lt;dbl&gt;, uv &lt;dbl&gt;</code></pre>
 <ol start="8" style="list-style-type: decimal">
 <li><p>In the code chunk called <code>arrange-1</code>, <em>Arrange</em>
-<code>sci_classes</code> by <code>subject</code> then
+<strong>sci_classes data</strong> by <code>subject</code> then
 <code>percentage_earned</code> in descending order. <em>Assign</em> to a
 new object. <em>Use</em> the str() function to examine the data type of
-each column in your data frame.</p></li>
+each column in your data frame.</p>
+<pre class="r"><code>sci_classess %&gt;% 
+  arrange(desc(subject),desc(percentage_earned))</code></pre>
+<pre><code>## # A tibble: 603 × 30
+##    student_id course_id     total_points_poss… total_points_ea… percentage_earn…
+##         &lt;dbl&gt; &lt;chr&gt;                      &lt;dbl&gt;            &lt;dbl&gt;            &lt;dbl&gt;
+##  1      92733 PhysA-S116-01               2829             2549            0.901
+##  2      62576 PhysA-S116-01               2215             1931            0.872
+##  3      94189 PhysA-S216-01               3682             3187            0.866
+##  4      48797 PhysA-S116-01               2207             1910            0.865
+##  5      87171 PhysA-S116-01               6318             5466            0.865
+##  6      86353 PhysA-S116-01               5736             4953            0.863
+##  7      92726 PhysA-S116-01               2739             2356            0.860
+##  8      90326 PhysA-S116-01               2966             2539            0.856
+##  9      85953 PhysA-S116-01               6564             5614            0.855
+## 10      96027 PhysA-S216-01               2981             2534            0.850
+## # … with 593 more rows, and 25 more variables: subject &lt;chr&gt;, semester &lt;chr&gt;,
+## #   section &lt;chr&gt;, Gradebook_Item &lt;chr&gt;, Grade_Category &lt;lgl&gt;,
+## #   FinalGradeCEMS &lt;dbl&gt;, Points_Possible &lt;dbl&gt;, Points_Earned &lt;dbl&gt;,
+## #   Gender &lt;chr&gt;, q1 &lt;dbl&gt;, q2 &lt;dbl&gt;, q3 &lt;dbl&gt;, q4 &lt;dbl&gt;, q5 &lt;dbl&gt;, q6 &lt;dbl&gt;,
+## #   q7 &lt;dbl&gt;, q8 &lt;dbl&gt;, q9 &lt;dbl&gt;, q10 &lt;dbl&gt;, TimeSpent &lt;dbl&gt;,
+## #   TimeSpent_hours &lt;dbl&gt;, TimeSpent_std &lt;dbl&gt;, int &lt;dbl&gt;, pc &lt;dbl&gt;, uv &lt;dbl&gt;</code></pre>
+<pre class="r"><code>#%&gt;%  arrange(desc(percentage_earned))</code></pre></li>
 <li><p>In the code chunk name <code>final-wrangle</code>, <em>use</em>
-<code>sci_classes</code> data and the %&gt;% <code>pipe</code>
+<strong>sci_classes data</strong> data and the %&gt;% <code>pipe</code>
 operator:</p></li>
 </ol>
 <ul>
@@ -536,7 +686,20 @@ operator:</p></li>
 <li>Assign to a new object.</li>
 <li>Examine the contents using a method of your choosing.</li>
 </ul>
-<pre class="r"><code>#Type your code here</code></pre>
+<pre class="r"><code>#Type your code here
+
+final_wrangle &lt;- sci_classess %&gt;%
+   select(student_id,subject,semester,FinalGradeCEMS) %&gt;%
+   filter(subject==&quot;OcnA&quot;) %&gt;%
+   arrange(desc(FinalGradeCEMS))
+            
+glimpse(final_wrangle)</code></pre>
+<pre><code>## Rows: 111
+## Columns: 4
+## $ student_id     &lt;dbl&gt; 66740, 91163, 94744, 91818, 90090, 88168, 89114, 86758,…
+## $ subject        &lt;chr&gt; &quot;OcnA&quot;, &quot;OcnA&quot;, &quot;OcnA&quot;, &quot;OcnA&quot;, &quot;OcnA&quot;, &quot;OcnA&quot;, &quot;OcnA&quot;,…
+## $ semester       &lt;chr&gt; &quot;S116&quot;, &quot;S216&quot;, &quot;S216&quot;, &quot;S116&quot;, &quot;S116&quot;, &quot;S116&quot;, &quot;S116&quot;,…
+## $ FinalGradeCEMS &lt;dbl&gt; 99.32998, 97.37018, 96.79732, 96.46231, 96.29816, 95.96…</code></pre>
 <div id="knit-submit" class="section level3">
 <h3>Knit &amp; Submit</h3>
 <p>Congratulations, you’ve completed your Foundation Badge on Learning
